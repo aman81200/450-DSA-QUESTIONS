@@ -7,26 +7,20 @@ void sort012(int* a, int l, int r)
     int i=-1,j=0,k=r+1;
     while(j<k)
     {
-        switch (a[j])
+        if(a[j]==0)
         {
-            case 0:
-            {
-                 i++;
-                swap(a[i],a[j]);
-                j++;
-                break;
-            }
-            case 1:
-            {
-                j++;
-                break;
-            }
-            case 2:
-            {
-                k--;
-                swap(a[j],a[k]);
-                break;
-            }
+            i++;
+            swap(a[i],a[j]);
+            j++;
+        }
+        else if(a[j]==2)
+        {
+            k--;
+            swap(a[j],a[k]);
+        }
+        else 
+        {
+            j++;
         }
     }
 
